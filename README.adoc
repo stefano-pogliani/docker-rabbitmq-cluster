@@ -62,4 +62,25 @@ if needed, additional nodes can be added to this file. If the entire cluster com
 and connection host should look like this: `dockerip:5672,dockerip:5673,dockerip:5674`
 
 
-    
+
+Benchmarks
+==========
+We run a benchmark tool (https://github.com/rabbitmq/rabbitmq-perf-test)
+against the cluster to check the configuration and to experiment with
+cluster failures and recovery.
+
+To run the benchmarks:
+[bash]
+----
+cd benchmarks/rabbitmq-perf-test
+mvn clean package -P assemblies
+
+cd target
+tar --extract --file rabbitmq-perf-test-1.0.2-SNAPSHOT-bin.tar.gz
+
+cd rabbitmq-perf-test-1.0.2-SNAPSHOT/bin
+./runjava com.rabbitmq.perf.PerfTest
+----
+
+See https://github.com/rabbitmq/rabbitmq-perf-test/blob/master/html/README.md
+for more advanced uses.

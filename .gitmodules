@@ -1,0 +1,3 @@
+[submodule "benchmarks/rabbitmq-perf-test"]
+	path = benchmarks/rabbitmq-perf-test
+	url = https://github.com/rabbitmq/rabbitmq-perf-test
